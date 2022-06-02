@@ -1,0 +1,16 @@
+@media (min-width: 992px) {
+  section {
+    padding: 6rem 0;
+  }
+
+  .header {
+    background: linear-gradient(180deg, #ffffff00, #fff),
+      url('../../dist/img/power-station-6579092_1920-upside-lg.jpg');
+    background-size: cover;
+    background-position: bottom;
+
+    &__subtitle {
+      font-size: 2.4rem;
+    }
+  }
+}

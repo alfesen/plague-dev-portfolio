@@ -1,0 +1,27 @@
+@keyframes logoAnimation {
+  from {
+    transform: rotate(0);
+    box-shadow: 0 0 50px #ffd900f5, 0 0 200px #504722ab;
+  }
+
+  20% {
+    box-shadow: 0 0 100px #5bc0ebf5, 0 0 300px #504722ab;
+  }
+
+  40% {
+    box-shadow: 0 0 50px #fde74cf5, 0 0 300px #504722ab;
+  }
+
+  60% {
+    box-shadow: 0 0 100px #9bc53df5, 0 0 300px #504722ab;
+  }
+
+  80% {
+    box-shadow: 0 0 50px #e55934f5, 0 0 300px #504722ab;
+  }
+
+  to {
+    transform: rotate(360deg);
+    box-shadow: 0 0 50px #ffd900f5, 0 0 200px #504722ab;
+  }
+}

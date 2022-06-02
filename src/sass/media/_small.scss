@@ -1,0 +1,85 @@
+@media (max-width: 576px) {
+  .header {
+    &__circle {
+      background-color: #ffffffc9;
+    }
+  }
+}
+
+@media (min-width: 576px) {
+  .nav {
+    &__mobile {
+      width: 40vw;
+    }
+  }
+
+  .about {
+    &__content {
+      padding: 3em;
+    }
+
+    &__title {
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    &__description {
+      text-align: center;
+    }
+  }
+
+  .skills {
+    &__boxes {
+      justify-content: center;
+      margin: 1em 0;
+      overflow: hidden;
+      &.active {
+        margin: 3em;
+      }
+
+      i {
+        transition: transform 0.3s;
+        padding: 0.4em;
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+
+      &-main {
+        i {
+          font-size: 3.5rem;
+        }
+      }
+
+      &-secondary {
+        i {
+          font-size: 2.7rem;
+        }
+
+        .skills__box {
+          margin: 2em 0;
+        }
+      }
+
+      &-to-be {
+        i {
+          font-size: 3.5rem;
+        }
+      }
+    }
+  }
+
+  .portfolio {
+    &__box {
+      &-title {
+        margin-bottom: 1.3em;
+        font-size: 1.6rem;
+      }
+
+      &-description {
+        text-align: justify;
+        font-size: 1.4rem;
+      }
+    }
+  }
+}
