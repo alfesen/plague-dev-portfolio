@@ -25,3 +25,20 @@
     box-shadow: 0 0 50px #ffd900f5, 0 0 200px #504722ab;
   }
 }
+
+@keyframes cta {
+  from {
+    transform: translateY(-100%);
+    color: c.$cta;
+  }
+
+  50% {
+    transform: translateY(0);
+    color: #fff;
+  }
+
+  to {
+    transform: translateY(100%);
+    color: c.$cta;
+  }
+}

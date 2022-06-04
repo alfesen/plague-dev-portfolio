@@ -48,7 +48,8 @@ section {
 }
 
 .section-title {
-  text-align: center;
+  display: flex;
+  justify-content: center;
   font-family: f.$heading;
   font-size: 2.5rem;
   letter-spacing: 2px;
@@ -73,6 +74,10 @@ section {
 
 .nav__desktop {
   display: none;
+
+  &-lang {
+    display: none;
+  }
 }
 
 //// mobile
@@ -121,6 +126,19 @@ section {
       text-transform: uppercase;
       text-decoration: none;
       border-bottom: 1px solid #000;
+    }
+
+    &-lang {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 3em;
+      margin-right: 3em;
+
+      &-select {
+        width: 30%;
+        padding: 1em;
+        background: none;
+      }
     }
   }
 }
@@ -187,6 +205,11 @@ section {
     }
   }
 
+  &__text {
+    display: flex;
+    flex-direction: column;
+  }
+
   &__title {
     font-size: 2rem;
     text-align: right;
@@ -196,6 +219,9 @@ section {
   &__description {
     text-align: justify;
     font-size: 1.4rem;
+    &--below {
+      margin-top: 1em;
+    }
   }
 }
 
@@ -212,7 +238,8 @@ section {
   filter: grayscale(80%);
 
   .label {
-    text-align: center;
+    display: flex;
+    justify-content: center;
     font-size: 1.7rem;
     padding-bottom: 0.5em;
     margin-bottom: 1.5em;
@@ -366,6 +393,50 @@ section {
   }
 }
 
+.cv {
+  display: block;
+  margin: 0 auto;
+  margin-top: 4em;
+  overflow: hidden;
+  border: 1px solid transparent;
+  position: relative;
+  border-radius: 5px;
+  background-color: c.$paleAzure;
+  z-index: 0;
+  cursor: pointer;
+
+  &-link {
+    position: relative;
+    padding: 1em 2em;
+    text-decoration: none;
+    color: c.$cta;
+    font-weight: bold;
+    font-size: 1.5rem;
+    z-index: 10;
+    transition: color 0.3s;
+  }
+
+  &:hover::before {
+    animation: cta 0.3s linear;
+  }
+
+  &:hover a {
+    color: #fff;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: c.$cta;
+    z-index: 1;
+    transform: translateX(-100%);
+  }
+}
+
 // contact
 
 .contact {
@@ -382,6 +453,8 @@ section {
   }
 
   &__title {
+    display: flex;
+    justify-content: center;
     font-size: 1.8rem;
     margin-bottom: 0.35em;
   }
@@ -421,6 +494,14 @@ footer {
     color: #fff;
     padding: 1em 0;
   }
+}
+
+.pl {
+  display: none;
+}
+
+.en {
+  display: flex;
 }
 
 @import './media/small';

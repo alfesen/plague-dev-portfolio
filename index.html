@@ -27,11 +27,23 @@
     <a href="#" class="logo mobile-logo">plague dev</a>
     <p class="mobile-logo-sign">Alexander Fesenko</p>
   </div>
-  <div class="nav__mobile-links">
-    <a href="#about" class="nav__mobile-link">about</a>
+  <div class="nav__mobile-links pl">
+    <a href="#about" class="nav__mobile-link">o mnie</a>
+    <a href="#skills" class="nav__mobile-link">umiejętności</a>
+    <a href="#portfolio" class="nav__mobile-link">portfolio</a>
+    <a href="#contact" class="nav__mobile-link">kontakt</a>
+  </div>
+  <div class="nav__mobile-links en">
+    <a href="#about" class="nav__mobile-link">about me</a>
     <a href="#skills" class="nav__mobile-link">skills</a>
     <a href="#portfolio" class="nav__mobile-link">portfolio</a>
     <a href="#contact" class="nav__mobile-link">contact</a>
+  </div>
+  <div class="nav__mobile-lang">
+    <select id="mobile-lang" name="lang" class="nav__mobile-lang-select" onchange="updateLanguage()">
+      <option value="en">EN</option>
+      <option value="pl">PL</option>
+    </select>
   </div>
 </div>
 
@@ -42,13 +54,27 @@
       <p class="desktop-logo-sign">Alexander Fesenko</p>
     </div>
 
-    <div class="nav__desktop-links">
+    <div class="nav__desktop-links en">
       <a href="#about" class="nav__desktop-link">about</a>
       <a href="#skills" class="nav__desktop-link">skills</a>
       <a href="#portfolio" class="nav__desktop-link">portfolio</a>
       <a href="#contact" class="nav__desktop-link">contact</a>
     </div>
+    
+    <div class="nav__desktop-links pl">
+      <a href="#about" class="nav__desktop-link">o mnie</a>
+      <a href="#skills" class="nav__desktop-link">umiejętności</a>
+      <a href="#portfolio" class="nav__desktop-link">portfolio</a>
+      <a href="#contact" class="nav__desktop-link">kontakt</a>
+    </div>
   </div>
+</div>
+
+<div class="nav__desktop-lang">
+  <select id="desktop-lang" name="lang" class="nav__desktop-lang" onchange="updateLanguage()">
+    <option value="en">EN</option>
+    <option value="pl">PL</option>
+  </select>
 </div>
   </nav>
 
@@ -61,7 +87,8 @@
 
   <main>
     <section class="about" id="about">
-  <h2 class="section-title">About me</h2>
+  <h2 class="section-title en">About</h2>
+  <h2 class="section-title pl">O mnie</h2>
 
   <div class="wrapper">
     <div class="about__content">
@@ -69,23 +96,44 @@
       <div class="about__img">
         <img src="./src/img/power-station-6579092_1280.jpg" alt="Dymiące fabyczne kominy. Smoking factorial chimneys">
       </div>
-      <div class="about__text">
-        <h3 class="about__title">Placeholder</h3>
-        <p class="about__description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate facilis
-          maiores consequatur ipsam a. Temporibus doloremque placeat sit, voluptas culpa esse? Laborum, nam. Doloribus,
-          illo perferendis. Nam est tempora quisquam.</p>
+      <div class="about__text en">
+        <h3 class="about__title"></h3>
+        <p class="about__description">Self-taught programmer looking for the first professional experiences in the
+          IT industry. I am passionate about creating websites and about web-related
+          technologies. I would like to develop further the skills I have learned so far. I
+          have been learning programming on my own for over a year, during which I
+          have mastered listed beside technologies and skills. I am driven by my
+          constant willingness to learn, I own an ability to focus deeply and a great
+          attention to detail.
+        </p>
+        <br>
+        <p class="about__description about__description--below">I am currently learning React and working on my
+          portfolio.
+        </p>
+      </div>
+      <div class="about__text pl">
+        <h3 class="about__title"></h3>
+        <p class="about__description">Programista, samouk szukający pierwszych doświadczeń zawodowych w branży IT.
+          Pasjonuję się tworzeniem stron internetowych i związanymi z tym technologiami. Pragnę dalej rozwijać
+          dotychczas poznane, oraz nowe umiejętności. Programowania uczę się samodzielnie od ponad roku, w ciągu którego
+          opanowałem wymienione obok technologie. Cechuje mnie ciągła chęć nauki, umiejętność głębokiego skupienia i
+          uważność na detale.
+        </p>
+        <br>
+        <p class="about__description about__description--below">Obecnie uczę się Reacta oraz rozwijam moje portfolio</p>
       </div>
     </div>
   </div>
 </section>
     <section class="skills" id="skills">
-  <h2 class="section-title">technologies</h2>
+  <h2 class="section-title en">Skills and Technologies</h2>
+  <h2 class="section-title pl">Umiejętności</h2>
   <div class="wrapper">
 
     <div class="accordion-body">
       <div class="accordion">
         <div class="container">
-          <div class="label">Main technologies <i class="fas fa-chevron-down"></i></div>
+          <div class="label main-skills">Main technologies<i class="fas fa-chevron-down"></i></div>
 
           <div class="skills__boxes skills__boxes-main">
             <div class="skills__box">
@@ -103,7 +151,7 @@
           </div>
         </div>
         <div class="container">
-          <div class="label">subsidary skills <i class="fas fa-chevron-down"></i></div>
+          <div class="label subsidary-skills">Subsidary Skills<i class="fas fa-chevron-down"></i></div>
           <div class="skills__boxes skills__boxes-secondary">
             <div class="skills__box">
               <i class="fa-brands fa-npm"></i>
@@ -132,7 +180,7 @@
           </div>
         </div>
         <div class="container">
-          <div class="label">closest ambitions <i class="fas fa-chevron-down"></i></div>
+          <div class="label ambitions">Closest Ambitions<i class="fas fa-chevron-down"></i></div>
           <div class="skills__boxes skills__boxes-to-be">
             <div class="skills__box">
               <i class="fa-brands fa-react"></i>
@@ -167,50 +215,58 @@
               <div class="portfolio__box-img">
                 <img src="./dist/img/flex-project.jpg" alt="">
               </div>
-              <div class="portfolio__box-text">
-                <a href="#" class="portfolio__box-title">FLEX Project</a href="#">
-                <p class="portfolio__box-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi
-                  minus
-                  aspernatur deserunt? Tempora non voluptatibus assumenda earum illo magni libero.</p>
+              <div class="portfolio__box-text en">
+                <a href="#" class="portfolio__box-title">Flexbox Portfolio</a href="#">
+                <p class="portfolio__box-description">The page you are on now is fully built on the basis of Flexbox. Both original animations and borrowed packages were used (<a href="https://glidejs.com/">GlideJS</a> for portfolio carousel and hamburger button animation, borrowed <a href="https://github.com/jonsuh/hamburgers">@jonsuh</a>. Szczególny zaś nacisk kładłem na SEO oraz wygodę użytkowania.</p>
+              </div>
+              <div class="portfolio__box-text pl">
+                <a href="#" class="portfolio__box-title">Portfolio na bazie Flexboxa</a href="#">
+                <p class="portfolio__box-description">Strona, na której przebywasz teraz, jest w pełni zbudowana na bazie Flexboxa. Użyte zostały tak autorskie animacje, jak i zapożyczone paczki (<a href="https://glidejs.com/">GlideJS</a> dla karuzeli porfolio oraz animacja przycisku hamburgerowego, pożyczona od <a href="https://github.com/jonsuh/hamburgers">@jonsuh</a>. I put special emphasis on SEO and user-friendliness.</p>
               </div>
             </div>
           </li>
           <li class="glide__slide">
             <div class="portfolio__box portfolio__box">
               <div class="portfolio__box-img">
-                <img src="./dist/img/flex-project.jpg" alt="">
+                <img src="./dist/img/grid-project.jpg" alt="">
               </div>
-              <div class="portfolio__box-text">
-                <a href="#" class="portfolio__box-title">Placeholder</a href="#">
-                <p class="portfolio__box-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi
-                  minus
-                  aspernatur deserunt? Tempora non voluptatibus assumenda earum illo magni libero.</p>
+              <div class="portfolio__box-text en">
+                <a href="#" class="portfolio__box-title">GRID Project</a href="#">
+                <p class="portfolio__box-description">Here will be a link to the project, fully build on a GRID layout</p>
               </div>
-            </div>
-          </li>
-          <li class="glide__slide">
-            <div class="portfolio__box portfolio__box">
-              <div class="portfolio__box-img">
-                <img src="./dist/img/flex-project.jpg" alt="">
-              </div>
-              <div class="portfolio__box-text">
-                <a href="#" class="portfolio__box-title">Placeholder</a href="#">
-                <p class="portfolio__box-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi
-                  minus
-                  aspernatur deserunt? Tempora non voluptatibus assumenda earum illo magni libero.</p>
+              <div class="portfolio__box-text pl">
+                <a href="#" class="portfolio__box-title">Strona na bazie GRIDa</a href="#">
+                <p class="portfolio__box-description">Tutaj znajdzie się link do strony opartej o GRID</p>
               </div>
             </div>
           </li>
           <li class="glide__slide">
             <div class="portfolio__box portfolio__box">
               <div class="portfolio__box-img">
-                <img src="./dist/img/flex-project.jpg" alt="">
+                <img src="./dist/img/bootstrap-project.jpg" alt="">
               </div>
-              <div class="portfolio__box-text">
-                <a href="#" class="portfolio__box-title">Placeholder</a href="#">
-                <p class="portfolio__box-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi
-                  minus
-                  aspernatur deserunt? Tempora non voluptatibus assumenda earum illo magni libero.</p>
+              <div class="portfolio__box-text en">
+                <a href="#" class="portfolio__box-title">Bootstrap Project</a href="#">
+                <p class="portfolio__box-description">Here you will find a link to the Bootstrap based page</p>
+              </div>
+              <div class="portfolio__box-text pl">
+                <a href="#" class="portfolio__box-title">Strona Bootstrapowa</a href="#">
+                <p class="portfolio__box-description">Tutaj znajdzie się link do strony w pełni zbudowanej na bazie Bootstrapa.</p>
+              </div>
+            </div>
+          </li>
+          <li class="glide__slide">
+            <div class="portfolio__box portfolio__box">
+              <div class="portfolio__box-img">
+                <img src="./dist/img/blog-project.jpg" alt="">
+              </div>
+              <div class="portfolio__box-text en">
+                <a href="#" class="portfolio__box-title">Blog</a href="#">
+                <p class="portfolio__box-description">Here you will find a link to the blog page, the main component of which will be JavaScript code</p>
+              </div>
+              <div class="portfolio__box-text pl">
+                <a href="#" class="portfolio__box-title">Blog</a href="#">
+                <p class="portfolio__box-description">Tutaj znajdzie się link do strony bloga, której główną częścią składową będzie kod JavaScript</p>
               </div>
             </div>
           </li>
@@ -224,6 +280,14 @@
         <button class="glide__bullet" data-glide-dir="=3"></button>
       </div>
     </div>
+    
+    <button class="cv en">
+      <a href="https://drive.google.com/file/d/1_V6LjomVefh5SYIvVFjRZOFYGe4jJWgb/view?usp=sharing" target="_blank" class="cv-link">Download CV</a>
+    </button>
+    <button class="cv pl">
+      <a href="https://drive.google.com/file/d/1po9fu5tdO2lXLAa9GAiOzQ-pRV8LNafJ/view?usp=sharing" target="_blank" class="cv-link">Pobierz CV</a>
+    </button>
+    
 
 </section>
 
@@ -235,22 +299,26 @@
 
 </div> -->
     <section class="contact" id="contact">
-  <h2 class="section-title">Contact me</h2>
+  <h2 class="section-title en">Contact me</h2>
+  <h2 class="section-title pl">Skontaktuj się ze mną</h2>
 
   <div class="wrapper">
     <div class="contact__content">
       <div class="contact__data">
-        <h3 class="contact__title">Send me an email</h3>
+        <h3 class="contact__title en">Send me an email</h3>
+        <h3 class="contact__title pl">Napisz do mnie email</h3>
         <a class="contact__link" href="mailto:a.fesenko2812@gmail.com">a.fesenko2812@gmail.com</a>
       </div>
       <div class="contact__data">
-        <h3 class="contact__title">Call me</h3>
+        <h3 class="contact__title en">Call me</h3>
+        <h3 class="contact__title pl">Zadzwoń do mnie</h3>
         <a class="contact__link" href="tel:+48788136459">+48 788 136 459</a>
       </div>
     </div>
 
     <div class="contact__projects">
-      <h3 class="contact__title">Look at my other projects</h3>
+      <h3 class="contact__title en">Take a look on my other projects</h3>
+      <h3 class="contact__title pl">Zobacz inne projekty</h3>
       <div class="contact__links">
         <a class="contact__link" href="#">GridProject</a>
         <a class="contact__link" href="#">BootstrapProject</a>
