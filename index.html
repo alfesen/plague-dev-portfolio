@@ -14,7 +14,17 @@
     integrity="sha512-ShLuspGzRsTiMlQ2Rg0e+atjy/gVQr3oYKnKmQkHQ6sxcnDAEOtOaPz2rRmeygV2CtnwUawDyHkGgH4zUbP3Hw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="./dist/css/style.min.css">
-  <script src="https://kit.fontawesome.com/cc6002be70.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/cc6002be70.js" crossorigin="anonymous" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/glide.min.js"
+    integrity="sha512-IkLiryZhI6G4pnA3bBZzYCT9Ewk87U4DGEOz+TnRD3MrKqaUitt+ssHgn2X/sxoM7FxCP/ROUp6wcxjH/GcI5Q=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"
+    integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="./dist/js/db.min.js?v1.1" defer></script>
+  <script src="./dist/js/dom.min.js?v1" defer></script>
+  <script src="./dist/js/functions.min.js?v1" defer></script>
 </head>
 
 <body>
@@ -26,60 +36,29 @@
   </button>
 
   <nav class="nav">
-    <div class="nav__mobile">
-  <div class="nav__mobile-logo">
-    <a href="#" class="logo mobile-logo">plague dev</a>
-    <p class="mobile-logo-sign">Alexander Fesenko</p>
+    <div class="wrapper">
+  <div class="nav__logo" onclick="hideNav()">
+    <a href="#" class="logo">plague dev</a>
+    <p class="logo-sign">Alexander Fesenko</p>
   </div>
-  <div class="nav__mobile-links pl">
-    <a href="#about" class="nav__mobile-link">o mnie</a>
-    <a href="#skills" class="nav__mobile-link">umiejętności</a>
-    <a href="#portfolio" class="nav__mobile-link">portfolio</a>
-    <a href="#contact" class="nav__mobile-link">kontakt</a>
+
+  <div class="nav__links" id="nav-links">
   </div>
-  <div class="nav__mobile-links en">
-    <a href="#about" class="nav__mobile-link">about me</a>
-    <a href="#skills" class="nav__mobile-link">skills</a>
-    <a href="#portfolio" class="nav__mobile-link">portfolio</a>
-    <a href="#contact" class="nav__mobile-link">contact</a>
-  </div>
-  <div class="nav__mobile-lang">
-    <select id="mobile-lang" name="lang" class="nav__mobile-lang-select" onchange="updateLanguage()">
+
+  <div class="nav__lang">
+    <select id="lang" name="lang" class="nav__lang-select">
       <option value="en">EN</option>
       <option value="pl">PL</option>
     </select>
   </div>
 </div>
 
-<div class="wrapper">
-  <div class="nav__desktop">
-    <div class="nav__desktop-logo">
-      <a href="#" class="logo desktop-logo">plague dev</a>
-      <p class="desktop-logo-sign">Alexander Fesenko</p>
-    </div>
-
-    <div class="nav__desktop-links en">
-      <a href="#about" class="nav__desktop-link">about</a>
-      <a href="#skills" class="nav__desktop-link">skills</a>
-      <a href="#portfolio" class="nav__desktop-link">portfolio</a>
-      <a href="#contact" class="nav__desktop-link">contact</a>
-    </div>
-    
-    <div class="nav__desktop-links pl">
-      <a href="#about" class="nav__desktop-link">o mnie</a>
-      <a href="#skills" class="nav__desktop-link">umiejętności</a>
-      <a href="#portfolio" class="nav__desktop-link">portfolio</a>
-      <a href="#contact" class="nav__desktop-link">kontakt</a>
-    </div>
-  </div>
-</div>
-
-<div class="nav__desktop-lang">
-  <select id="desktop-lang" name="lang" class="nav__desktop-lang" onchange="updateLanguage()">
-    <option value="en">EN</option>
-    <option value="pl">PL</option>
-  </select>
-</div>
+<script type="text/x-handlebars-template" id="nav-template">
+  <a href="#about" class="nav__link" onclick="hideNav()">{{about}}</a>
+  <a href="#skills" class="nav__link" onclick="hideNav()">{{skills}}</a>
+  <a href="#portfolio" class="nav__link" onclick="hideNav()">{{portfolio}}</a>
+  <a href="#contact" class="nav__link" onclick="hideNav()">{{contact}}</a>
+</script>
   </nav>
 
   <header class="header">
@@ -91,47 +70,27 @@
 
   <main>
     <section class="about" id="about">
-  <h2 class="section-title en">About</h2>
-  <h2 class="section-title pl">O mnie</h2>
+  <h2 class="section-title en" id="about-label">About</h2>
 
   <div class="wrapper">
     <div class="about__content">
       <div class="section-decoration-right"></div>
       <div class="about__img">
-        <img src="./src/img/power-station-6579092_1280.jpg" alt="Dymiące fabyczne kominy. Smoking factorial chimneys">
+        <img src="./dist/img/power-station-6579092_640.jpg" alt="Dymiące fabyczne kominy. Smoking factorial chimneys">
       </div>
-      <div class="about__text en">
-        <h3 class="about__title"></h3>
-        <p class="about__description">Self-taught programmer looking for the first professional experiences in the
-          IT industry. I am passionate about creating websites and about web-related
-          technologies. I would like to develop further the skills I have learned so far. I
-          have been learning programming on my own for over a year, during which I
-          have mastered listed beside technologies and skills. I am driven by my
-          constant willingness to learn, I own an ability to focus deeply and a great
-          attention to detail.
-        </p>
-        <br>
-        <p class="about__description about__description--below">I am currently learning React and working on my
-          portfolio.
-        </p>
-      </div>
-      <div class="about__text pl">
-        <h3 class="about__title"></h3>
-        <p class="about__description">Programista, samouk szukający pierwszych doświadczeń zawodowych w branży IT.
-          Pasjonuję się tworzeniem stron internetowych i związanymi z tym technologiami. Pragnę dalej rozwijać
-          dotychczas poznane, oraz nowe umiejętności. Programowania uczę się samodzielnie od ponad roku, w ciągu którego
-          opanowałem wymienione obok technologie. Cechuje mnie ciągła chęć nauki, umiejętność głębokiego skupienia i
-          uważność na detale.
-        </p>
-        <br>
-        <p class="about__description about__description--below">Obecnie uczę się Reacta oraz rozwijam moje portfolio</p>
-      </div>
+      <div class="about__text" id="about-text"></div>
     </div>
   </div>
 </section>
+
+<script id="about-template" type="text/x-handlebars-template">
+    <p class="about__description">{{main}}</p>
+    <br />
+    <a href="https://modern-aesthetics-24e49.web.app/home" class="about__description about__description--below" target="_blank">{{subText}}
+    </a>
+</script>
     <section class="skills" id="skills">
-  <h2 class="section-title en">Skills and Technologies</h2>
-  <h2 class="section-title pl">Umiejętności</h2>
+  <h2 class="section-title" id="main-skills">Skills and Technologies</h2>
   <div class="wrapper">
 
     <div class="accordion-body">
@@ -152,10 +111,14 @@
               <i class="fa-brands fa-js-square"></i>
               <h3 class="skills__box-title">js</h3>
             </div>
+            <div class="skills__box">
+              <i class="fa-brands fa-react"></i>
+              <h3 class="skills__box-title">react</h3>
+            </div>
           </div>
         </div>
         <div class="container">
-          <div class="label subsidary-skills">Subsidary Skills<i class="fas fa-chevron-down"></i></div>
+          <div class="label subsidiary-skills">Subsidiary Skills<i class="fas fa-chevron-down"></i></div>
           <div class="skills__boxes skills__boxes-secondary">
             <div class="skills__box">
               <i class="fa-brands fa-npm"></i>
@@ -187,10 +150,6 @@
           <div class="label ambitions">Closest Ambitions<i class="fas fa-chevron-down"></i></div>
           <div class="skills__boxes skills__boxes-to-be">
             <div class="skills__box">
-              <i class="fa-brands fa-react"></i>
-              <h3 class="skills__box-title">react</h3>
-            </div>
-            <div class="skills__box">
               <i class="fa-brands fa-vuejs"></i>
               <h3 class="skills__box-title">vue.js</h3>
             </div>
@@ -210,88 +169,28 @@
 
     <section class="portfolio" id="portfolio">
   <h2 class="section-title">portfolio</h2>
-  <div class="wrapper">
-    <div class="glide">
-      <div class="glide__track" data-glide-el="track">
-        <ul class="glide__slides">
-          <li class="glide__slide">
-            <div class="portfolio__box portfolio__box--actual">
-              <div class="portfolio__box-img">
-                <img src="./dist/img/flex-project.jpg" alt="">
-              </div>
-              <div class="portfolio__box-text en">
-                <a href="#" class="portfolio__box-title">Flexbox Portfolio</a href="#">
-                <p class="portfolio__box-description">The page you are on now is fully built on the basis of Flexbox.
-                  Both original animations and borrowed packages were used (<a href="https://glidejs.com/">GlideJS</a>
-                  for portfolio carousel and hamburger button animation, borrowed <a
-                    href="https://github.com/jonsuh/hamburgers">@jonsuh</a>. Szczególny zaś nacisk kładłem na SEO oraz
-                  wygodę użytkowania.</p>
-              </div>
-              <div class="portfolio__box-text pl">
-                <a href="#" class="portfolio__box-title">Portfolio na bazie Flexboxa</a href="#">
-                <p class="portfolio__box-description">Strona, na której przebywasz teraz, jest w pełni zbudowana na
-                  bazie Flexboxa. Użyte zostały tak autorskie animacje, jak i zapożyczone paczki (<a
-                    href="https://glidejs.com/">GlideJS</a> dla karuzeli porfolio oraz animacja przycisku
-                  hamburgerowego, pożyczona od <a href="https://github.com/jonsuh/hamburgers">@jonsuh</a>. I put special
-                  emphasis on SEO and user-friendliness.</p>
-              </div>
-            </div>
-          </li>
-          <li class="glide__slide">
+
+  <div class="wrapper" id="portfolio-wrapper">
+    <script type="text/x-handlebars-template" id="portfolio-template">
+            <div class="glide">
+              <div class="glide__track" data-glide-el="track">
+                <ul class="glide__slides" id="slides">
+            {{#each list}}
+            <li class="glide__slide">
             <div class="portfolio__box portfolio__box">
               <div class="portfolio__box-img">
-                <img src="./dist/img/grid-project.jpg" alt="">
+                <img src={{image}} alt={{title}}>
               </div>
-              <div class="portfolio__box-text en">
-                <a href="https://alfesen.github.io/pdp-philosophybay/" class="portfolio__box-title">PhilosophyBay</a>
-                <p class="portfolio__box-description">
-                  It is a simple yet creative GRID based project.
-                  On this page I included quotes from famous philosophers, from Plato to Heidegger, that highly inspire
-                  me not only at work, but also in my everyday life.
-                </p>
-              </div>
-              <div class="portfolio__box-text pl">
-                <a href="#" class="portfolio__box-title">Strona na bazie GRIDa</a href="#">
-                <p class="portfolio__box-description">Tutaj znajdzie się link do strony opartej o GRID</p>
+              <div class="portfolio__box-text">
+                <a href={{link}} class="portfolio__box-title">{{title}}</a href="#">
+                <p class="portfolio__box-description">{{description}}</p>
               </div>
             </div>
           </li>
-          <li class="glide__slide">
-            <div class="portfolio__box portfolio__box">
-              <div class="portfolio__box-img">
-                <img src="./dist/img/bootstrap-project.jpg" alt="">
-              </div>
-              <div class="portfolio__box-text en">
-                <a href="#" class="portfolio__box-title">Bootstrap Project</a href="#">
-                <p class="portfolio__box-description">Here you will find a link to the Bootstrap based page</p>
-              </div>
-              <div class="portfolio__box-text pl">
-                <a href="#" class="portfolio__box-title">Strona Bootstrapowa</a href="#">
-                <p class="portfolio__box-description">Tutaj znajdzie się link do strony w pełni zbudowanej na bazie
-                  Bootstrapa.</p>
-              </div>
-            </div>
-          </li>
-          <li class="glide__slide">
-            <div class="portfolio__box portfolio__box">
-              <div class="portfolio__box-img">
-                <img src="./dist/img/blog-project.jpg" alt="">
-              </div>
-              <div class="portfolio__box-text en">
-                <a href="#" class="portfolio__box-title">Blog</a href="#">
-                <p class="portfolio__box-description">Here you will find a link to the blog page, the main component of
-                  which will be JavaScript code</p>
-              </div>
-              <div class="portfolio__box-text pl">
-                <a href="#" class="portfolio__box-title">Blog</a href="#">
-                <p class="portfolio__box-description">Tutaj znajdzie się link do strony bloga, której główną częścią
-                  składową będzie kod JavaScript</p>
-              </div>
-            </div>
-          </li>
+            {{/each}}
         </ul>
       </div>
-
+            
       <div class="glide__bullets" data-glide-el="controls[nav]">
         <button class="glide__bullet" data-glide-dir="=0"></button>
         <button class="glide__bullet" data-glide-dir="=1"></button>
@@ -299,49 +198,36 @@
         <button class="glide__bullet" data-glide-dir="=3"></button>
       </div>
     </div>
-
-    <button class="cv en">
-      <a href="https://drive.google.com/file/d/1g4SlSmF5UKXRc5fouecUs8jbgLQQF6cn/view?usp=sharing" target="_blank"
-        class="cv-link">Download CV</a>
+            
+    <button class="cv">
+      <a href="{{cvLink}}" target="_blank"
+          class="cv-link">{{buttonText}}</a>
     </button>
-    <button class="cv pl">
-      <a href="https://drive.google.com/file/d/1pm6om_GUmZgGixuhHmI4ICHgamCGxZ5l/view?usp=sharing" target="_blank"
-        class="cv-link">Pobierz CV</a>
-    </button>
-
-
+    </script>
+  </div>
 </section>
-
-<!-- <div class="portfolio__boxes">
-  
-  
-  
-  
-
-</div> -->
     <section class="contact" id="contact">
-  <h2 class="section-title en">Contact me</h2>
-  <h2 class="section-title pl">Skontaktuj się ze mną</h2>
+  <h2 class="section-title" id="contact-label">Contact me</h2>
 
   <div class="wrapper">
     <div class="contact__content">
       <div class="contact__data">
         <h3 class="contact__title en">Send me an email</h3>
-        <h3 class="contact__title pl">Napisz do mnie email</h3>
+        <!-- <h3 class="contact__title pl">Napisz do mnie email</h3> -->
         <a class="contact__link" href="mailto:alexander.fesenko@plaguedev.pl">alexander.fesenko@plaguedev.pl</a>
       </div>
       <div class="contact__data">
         <h3 class="contact__title en">Call me</h3>
-        <h3 class="contact__title pl">Zadzwoń do mnie</h3>
+        <!-- <h3 class="contact__title pl">Zadzwoń do mnie</h3> -->
         <a class="contact__link" href="tel:+48788136459">+48 788 136 459</a>
       </div>
     </div>
 
     <div class="contact__projects">
       <h3 class="contact__title en">Take a look on my other projects</h3>
-      <h3 class="contact__title pl">Zobacz inne projekty</h3>
+      <!-- <h3 class="contact__title pl">Zobacz inne projekty</h3> -->
       <div class="contact__links">
-        <a class="contact__link" href="#">GridProject</a>
+        <a class="contact__link" href="https://alfesen.github.io/pdp-philosophybay/" target="_blank">PhilosophyBay</a>
         <a class="contact__link" href="#">BootstrapProject</a>
         <a class="contact__link" href="#">JSBlog</a>
       </div>
@@ -358,11 +244,6 @@
 
 
   </footer>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/glide.min.js"
-    integrity="sha512-IkLiryZhI6G4pnA3bBZzYCT9Ewk87U4DGEOz+TnRD3MrKqaUitt+ssHgn2X/sxoM7FxCP/ROUp6wcxjH/GcI5Q=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="./dist/js/main.min.js"></script>
 </body>
 
 </html>

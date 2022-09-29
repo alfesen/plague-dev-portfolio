@@ -1,39 +1,20 @@
 <section class="about" id="about">
-  <h2 class="section-title en">About</h2>
-  <h2 class="section-title pl">O mnie</h2>
+  <h2 class="section-title en" id="about-label">About</h2>
 
   <div class="wrapper">
     <div class="about__content">
       <div class="section-decoration-right"></div>
       <div class="about__img">
-        <img src="./src/img/power-station-6579092_1280.jpg" alt="Dymiące fabyczne kominy. Smoking factorial chimneys">
+        <img src="./dist/img/power-station-6579092_640.jpg" alt="Dymiące fabyczne kominy. Smoking factorial chimneys">
       </div>
-      <div class="about__text en">
-        <h3 class="about__title"></h3>
-        <p class="about__description">Self-taught programmer looking for the first professional experiences in the
-          IT industry. I am passionate about creating websites and about web-related
-          technologies. I would like to develop further the skills I have learned so far. I
-          have been learning programming on my own for over a year, during which I
-          have mastered listed beside technologies and skills. I am driven by my
-          constant willingness to learn, I own an ability to focus deeply and a great
-          attention to detail.
-        </p>
-        <br>
-        <p class="about__description about__description--below">I am currently learning React and working on my
-          portfolio.
-        </p>
-      </div>
-      <div class="about__text pl">
-        <h3 class="about__title"></h3>
-        <p class="about__description">Programista, samouk szukający pierwszych doświadczeń zawodowych w branży IT.
-          Pasjonuję się tworzeniem stron internetowych i związanymi z tym technologiami. Pragnę dalej rozwijać
-          dotychczas poznane, oraz nowe umiejętności. Programowania uczę się samodzielnie od ponad roku, w ciągu którego
-          opanowałem wymienione obok technologie. Cechuje mnie ciągła chęć nauki, umiejętność głębokiego skupienia i
-          uważność na detale.
-        </p>
-        <br>
-        <p class="about__description about__description--below">Obecnie uczę się Reacta oraz rozwijam moje portfolio</p>
-      </div>
+      <div class="about__text" id="about-text"></div>
     </div>
   </div>
 </section>
+
+<script id="about-template" type="text/x-handlebars-template">
+    <p class="about__description">{{main}}</p>
+    <br />
+    <a href="https://modern-aesthetics-24e49.web.app/home" class="about__description about__description--below" target="_blank">{{subText}}
+    </a>
+</script>

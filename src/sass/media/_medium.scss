@@ -20,71 +20,88 @@
 
   .hamburger {
     display: none;
+    justify-content: space-between;
   }
 
   .nav {
-    position: relative;
+    width: 100%;
+    text-align: center;
     .wrapper {
+      margin: auto;
+      width: 70%;
+      flex-direction: row;
+      justify-content: space-between;
       width: 80%;
     }
+    line-height: 18px;
+    height: auto;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    transform: translateX(0);
 
-    &__desktop {
-      display: flex;
+    &__links {
+      flex-direction: row;
+      justify-content: flex-end;
+    }
+
+    &__link {
       position: relative;
-      justify-content: space-between;
-      align-items: center;
+      display: inline-block;
+      padding: 1.5em 0.75em;
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #000;
+      border: none;
 
-      &-lang {
+      &::before {
+        content: '';
         position: absolute;
-        display: flex;
-        z-index: 1;
-        top: 10px;
-        right: 10px;
-        padding: .5em;
-        background: none;
-        cursor: pointer;
+        left: 0;
+        bottom: 1em;
+        width: 100%;
+        height: 0.15rem;
+        background-color: #000;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.3s;
       }
 
-      &-logo {
+      &:hover::before {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+    }
+
+    &__lang {
+      position: absolute;
+      margin: 0.5em 0.5em 0 0;
+      right: 0;
+      padding: 0.5em;
+      background: none;
+      cursor: pointer;
+    }
+
+    &__logo {
+      align-self: flex-start;
+      transition: transform 0.3s;
+      &:hover {
+        transform: scale(1.1);
+      }
+      .logo {
         font-size: 2rem;
         transition: transform 0.3s;
         line-height: 18px;
         cursor: pointer;
+        &-sign {
+          font-size: 1.4rem;
+          transform: translateX(0);
+        }
 
         &:hover {
           transform: scale(1.1);
-        }
-
-        .desktop-logo-sign {
-          font-size: 1.4rem;
-        }
-      }
-
-      &-link {
-        position: relative;
-        display: inline-block;
-        padding: 1.5em 0.75em;
-        font-size: 1.3rem;
-        text-decoration: none;
-        text-transform: uppercase;
-        color: #000;
-
-        &::before {
-          content: '';
-          position: absolute;
-          left: 0;
-          bottom: 1em;
-          width: 100%;
-          height: 0.15rem;
-          background-color: #000;
-          transform: scaleX(0);
-          transform-origin: right;
-          transition: transform 0.3s;
-        }
-
-        &:hover::before {
-          transform: scaleX(1);
-          transform-origin: left;
         }
       }
     }
@@ -94,7 +111,7 @@
     background: linear-gradient(180deg, #ffffff00, #fff),
       url('../../dist/img/power-station-6579092_1280-upside.jpg');
     background-position: bottom;
-
+    background-size: cover;
     &__circle {
       background-color: #ffffffa6;
     }

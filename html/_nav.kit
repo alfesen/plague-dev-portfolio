@@ -1,54 +1,23 @@
-<div class="nav__mobile">
-  <div class="nav__mobile-logo">
-    <a href="#" class="logo mobile-logo">plague dev</a>
-    <p class="mobile-logo-sign">Alexander Fesenko</p>
+<div class="wrapper">
+  <div class="nav__logo" onclick="hideNav()">
+    <a href="#" class="logo">plague dev</a>
+    <p class="logo-sign">Alexander Fesenko</p>
   </div>
-  <div class="nav__mobile-links pl">
-    <a href="#about" class="nav__mobile-link">o mnie</a>
-    <a href="#skills" class="nav__mobile-link">umiejętności</a>
-    <a href="#portfolio" class="nav__mobile-link">portfolio</a>
-    <a href="#contact" class="nav__mobile-link">kontakt</a>
+
+  <div class="nav__links" id="nav-links">
   </div>
-  <div class="nav__mobile-links en">
-    <a href="#about" class="nav__mobile-link">about me</a>
-    <a href="#skills" class="nav__mobile-link">skills</a>
-    <a href="#portfolio" class="nav__mobile-link">portfolio</a>
-    <a href="#contact" class="nav__mobile-link">contact</a>
-  </div>
-  <div class="nav__mobile-lang">
-    <select id="mobile-lang" name="lang" class="nav__mobile-lang-select" onchange="updateLanguage()">
+
+  <div class="nav__lang">
+    <select id="lang" name="lang" class="nav__lang-select">
       <option value="en">EN</option>
       <option value="pl">PL</option>
     </select>
   </div>
 </div>
 
-<div class="wrapper">
-  <div class="nav__desktop">
-    <div class="nav__desktop-logo">
-      <a href="#" class="logo desktop-logo">plague dev</a>
-      <p class="desktop-logo-sign">Alexander Fesenko</p>
-    </div>
-
-    <div class="nav__desktop-links en">
-      <a href="#about" class="nav__desktop-link">about</a>
-      <a href="#skills" class="nav__desktop-link">skills</a>
-      <a href="#portfolio" class="nav__desktop-link">portfolio</a>
-      <a href="#contact" class="nav__desktop-link">contact</a>
-    </div>
-    
-    <div class="nav__desktop-links pl">
-      <a href="#about" class="nav__desktop-link">o mnie</a>
-      <a href="#skills" class="nav__desktop-link">umiejętności</a>
-      <a href="#portfolio" class="nav__desktop-link">portfolio</a>
-      <a href="#contact" class="nav__desktop-link">kontakt</a>
-    </div>
-  </div>
-</div>
-
-<div class="nav__desktop-lang">
-  <select id="desktop-lang" name="lang" class="nav__desktop-lang" onchange="updateLanguage()">
-    <option value="en">EN</option>
-    <option value="pl">PL</option>
-  </select>
-</div>
+<script type="text/x-handlebars-template" id="nav-template">
+  <a href="#about" class="nav__link" onclick="hideNav()">{{about}}</a>
+  <a href="#skills" class="nav__link" onclick="hideNav()">{{skills}}</a>
+  <a href="#portfolio" class="nav__link" onclick="hideNav()">{{portfolio}}</a>
+  <a href="#contact" class="nav__link" onclick="hideNav()">{{contact}}</a>
+</script>
